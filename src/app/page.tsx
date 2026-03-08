@@ -1,57 +1,57 @@
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Link from 'next/link';
-import { Microscope, BookOpen, FlaskConical, GraduationCap, Award, Users, ArrowLeft, Beaker, Dna, Bug, Sparkles, ChevronLeft } from 'lucide-react';
+import { Microscope, BookOpen, FlaskConical, GraduationCap, Award, Users, ArrowLeft, Beaker, Dna, Bug, Sparkles, ChevronLeft, Star, Target, Zap } from 'lucide-react';
 
 export default function HomePage() {
   return (
     <>
       <Navbar />
 
-      {/* Hero Section - Ultra Premium */}
-      <section className="relative min-h-screen flex items-center overflow-hidden noise-overlay" style={{
-        background: 'linear-gradient(160deg, #050d18 0%, #0c1b2a 25%, #132d46 50%, #1a3a5c 75%, #0c1b2a 100%)'
-      }}>
-        {/* Ambient Light Effects */}
+      {/* ============ HERO ============ */}
+      <section className="relative min-h-screen flex items-center overflow-hidden noise-overlay bg-mesh-dark">
+        {/* Decorative Elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[#1b8a7a]/8 rounded-full blur-[150px]"></div>
-          <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#c8a45e]/6 rounded-full blur-[120px]"></div>
-          <div className="absolute top-1/3 left-1/4 w-[400px] h-[400px] bg-[#1b8a7a]/5 rounded-full blur-[100px] animate-float"></div>
-          {/* Decorative Grid */}
-          <div className="absolute inset-0 opacity-[0.03]" style={{
-            backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
-            backgroundSize: '60px 60px'
+          {/* Floating rings */}
+          <div className="ring-decoration w-[500px] h-[500px] top-[-100px] right-[-100px] animate-rotate-slow opacity-30"></div>
+          <div className="ring-decoration w-[300px] h-[300px] bottom-[10%] left-[5%] animate-rotate-slow opacity-20" style={{animationDirection:'reverse'}}></div>
+          {/* Grid overlay */}
+          <div className="absolute inset-0 opacity-[0.04]" style={{
+            backgroundImage: 'linear-gradient(rgba(255,255,255,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.15) 1px, transparent 1px)',
+            backgroundSize: '80px 80px'
           }}></div>
-          {/* Decorative Circles */}
-          <div className="absolute top-20 left-20 w-2 h-2 bg-[#c8a45e]/40 rounded-full"></div>
-          <div className="absolute top-40 left-40 w-1.5 h-1.5 bg-[#1b8a7a]/40 rounded-full"></div>
-          <div className="absolute bottom-40 right-40 w-2 h-2 bg-[#c8a45e]/30 rounded-full"></div>
-          <div className="absolute bottom-60 right-60 w-1 h-1 bg-white/20 rounded-full"></div>
+          {/* Glowing orbs */}
+          <div className="absolute top-[20%] right-[10%] w-4 h-4 bg-teal-400/30 rounded-full blur-sm animate-float"></div>
+          <div className="absolute top-[60%] left-[15%] w-3 h-3 bg-gold/30 rounded-full blur-sm animate-float" style={{animationDelay:'2s'}}></div>
+          <div className="absolute top-[40%] left-[40%] w-2 h-2 bg-white/20 rounded-full animate-float" style={{animationDelay:'4s'}}></div>
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-            {/* Text Content */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 items-center">
+            {/* Text */}
             <div className="lg:col-span-7 animate-fadeInUp">
-              <div className="inline-flex items-center gap-3 glass rounded-full px-5 py-2.5 mb-8">
-                <div className="w-2 h-2 bg-[#1b8a7a] rounded-full animate-pulse"></div>
-                <span className="text-white/70 text-sm font-medium tracking-wide">أخصائية الأحياء الدقيقة</span>
-                <Dna className="w-4 h-4 text-[#c8a45e]" />
+              <div className="inline-flex items-center gap-3 glass rounded-full px-6 py-3 mb-10">
+                <div className="relative">
+                  <div className="w-2.5 h-2.5 bg-teal-400 rounded-full"></div>
+                  <div className="absolute inset-0 w-2.5 h-2.5 bg-teal-400 rounded-full animate-ping"></div>
+                </div>
+                <span className="text-white/70 text-sm font-semibold tracking-wider">أخصائية الأحياء الدقيقة</span>
+                <Dna className="w-4 h-4 text-gold" />
               </div>
               
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.15] mb-8">
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white leading-[1.05] mb-10">
                 البحث العلمي
                 <br />
                 <span className="text-gradient">في خدمة</span>
                 <br />
-                <span className="text-white/90">صحة المجتمع</span>
+                <span className="text-white/80">صحة المجتمع</span>
               </h1>
               
-              <p className="text-lg text-white/50 leading-relaxed mb-10 max-w-xl font-light">
+              <p className="text-xl text-white/40 leading-relaxed mb-12 max-w-xl font-light">
                 متخصصة في الأحياء الدقيقة مع خبرة تمتد لأكثر من 15 عامًا في البحث العلمي والتدريس الأكاديمي. نسعى لتطوير حلول مبتكرة في مجال التشخيص الجزيئي ومكافحة مقاومة المضادات الحيوية.
               </p>
               
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-wrap gap-5">
                 <Link href="/about" className="btn-gold text-base">
                   <span>تعرف على المزيد</span>
                   <ArrowLeft className="w-5 h-5" />
@@ -62,25 +62,24 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Stats Cards - Premium Glass */}
+            {/* Stats Cards */}
             <div className="lg:col-span-5">
-              <div className="grid grid-cols-2 gap-5">
+              <div className="grid grid-cols-2 gap-6">
                 {[
-                  { icon: FlaskConical, label: 'مشروع بحثي', value: '+20', delay: '0s' },
-                  { icon: BookOpen, label: 'منشور علمي', value: '+50', delay: '0.1s' },
-                  { icon: GraduationCap, label: 'مقرر دراسي', value: '+10', delay: '0.2s' },
-                  { icon: Award, label: 'جائزة وتكريم', value: '+15', delay: '0.3s' },
+                  { icon: FlaskConical, label: 'مشروع بحثي', value: '+20', color: 'from-teal-500/20 to-teal-500/5' },
+                  { icon: BookOpen, label: 'منشور علمي', value: '+50', color: 'from-gold/20 to-gold/5' },
+                  { icon: GraduationCap, label: 'مقرر دراسي', value: '+10', color: 'from-sky-500/20 to-sky-500/5' },
+                  { icon: Award, label: 'جائزة وتكريم', value: '+15', color: 'from-purple-500/20 to-purple-500/5' },
                 ].map((stat, index) => (
                   <div
                     key={index}
-                    className="glass rounded-2xl p-7 text-center group hover:bg-white/12 transition-all duration-500 cursor-default"
-                    style={{ animationDelay: stat.delay }}
+                    className="card-glass-dark p-8 text-center group"
                   >
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#c8a45e]/20 to-[#1b8a7a]/20 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-500">
-                      <stat.icon className="w-6 h-6 text-[#c8a45e]" />
+                    <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${stat.color} flex items-center justify-center mx-auto mb-5 group-hover:scale-110 transition-transform duration-500`}>
+                      <stat.icon className="w-7 h-7 text-white/80" />
                     </div>
-                    <div className="text-3xl font-bold text-white mb-1 tracking-tight">{stat.value}</div>
-                    <div className="text-white/40 text-sm font-light">{stat.label}</div>
+                    <div className="text-4xl font-black text-white mb-2 tracking-tight">{stat.value}</div>
+                    <div className="text-white/35 text-sm font-medium">{stat.label}</div>
                   </div>
                 ))}
               </div>
@@ -88,41 +87,53 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Bottom Fade */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent"></div>
+        {/* Bottom wave transition */}
+        <div className="absolute bottom-0 left-0 right-0">
+          <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
+            <path d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="white"/>
+          </svg>
+        </div>
       </section>
 
-      {/* Research Areas - Premium */}
-      <section className="py-28 bg-white relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* ============ RESEARCH AREAS ============ */}
+      <section className="py-32 bg-white bg-pattern-dots relative">
+        {/* Decorative corner elements */}
+        <div className="absolute top-0 right-0 w-80 h-80 bg-gradient-to-bl from-teal-50 to-transparent rounded-bl-full opacity-60"></div>
+        <div className="absolute bottom-0 left-0 w-60 h-60 bg-gradient-to-tr from-amber-50 to-transparent rounded-tr-full opacity-60"></div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center mb-20">
             <div className="section-subtitle justify-center">مجالات التخصص</div>
-            <h2 className="text-4xl md:text-5xl font-bold text-[#0c1b2a] mb-5 section-title mx-auto">
+            <h2 className="text-4xl md:text-5xl font-black text-[#0a1628] mb-6 section-title mx-auto">
               محاور البحث العلمي
             </h2>
-            <p className="text-[#5a6275] max-w-2xl mx-auto mt-8 text-lg font-light leading-relaxed">
+            <p className="text-[#475569] max-w-2xl mx-auto mt-10 text-lg font-light leading-relaxed">
               نركز في أبحاثنا على عدة محاور رئيسية تساهم في تطوير المعرفة العلمية وخدمة المجتمع
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { icon: Bug, title: 'مقاومة المضادات الحيوية', description: 'دراسة آليات مقاومة البكتيريا للمضادات الحيوية وتطوير استراتيجيات جديدة لمكافحتها.', gradient: 'from-rose-50 to-orange-50', iconBg: 'bg-rose-100', iconColor: 'text-rose-600' },
-              { icon: Dna, title: 'التشخيص الجزيئي', description: 'تطوير تقنيات تشخيصية جزيئية سريعة ودقيقة للكشف عن الأمراض المعدية.', gradient: 'from-sky-50 to-indigo-50', iconBg: 'bg-sky-100', iconColor: 'text-sky-600' },
-              { icon: Beaker, title: 'التنوع الميكروبي', description: 'استكشاف التنوع البيولوجي للكائنات الدقيقة في البيئات المختلفة واكتشاف أنواع جديدة.', gradient: 'from-emerald-50 to-teal-50', iconBg: 'bg-emerald-100', iconColor: 'text-emerald-600' },
-              { icon: FlaskConical, title: 'علم الفيروسات', description: 'دراسة الفيروسات المسببة للأمراض وتطوير طرق الوقاية والعلاج.', gradient: 'from-violet-50 to-purple-50', iconBg: 'bg-violet-100', iconColor: 'text-violet-600' },
-              { icon: Microscope, title: 'علم الفطريات الطبية', description: 'البحث في الفطريات المسببة للأمراض وتطوير أساليب التشخيص والعلاج.', gradient: 'from-amber-50 to-yellow-50', iconBg: 'bg-amber-100', iconColor: 'text-amber-600' },
-              { icon: Users, title: 'الصحة العامة', description: 'المساهمة في برامج الصحة العامة ومكافحة الأوبئة والأمراض المعدية.', gradient: 'from-teal-50 to-cyan-50', iconBg: 'bg-teal-100', iconColor: 'text-teal-600' },
+              { icon: Bug, title: 'مقاومة المضادات الحيوية', description: 'دراسة آليات مقاومة البكتيريا للمضادات الحيوية وتطوير استراتيجيات جديدة لمكافحتها.', bg: 'bg-gradient-to-br from-rose-50 to-orange-50', iconBg: 'bg-gradient-to-br from-rose-500 to-orange-500', iconColor: 'text-white' },
+              { icon: Dna, title: 'التشخيص الجزيئي', description: 'تطوير تقنيات تشخيصية جزيئية سريعة ودقيقة للكشف عن الأمراض المعدية.', bg: 'bg-gradient-to-br from-sky-50 to-indigo-50', iconBg: 'bg-gradient-to-br from-sky-500 to-indigo-500', iconColor: 'text-white' },
+              { icon: Beaker, title: 'التنوع الميكروبي', description: 'استكشاف التنوع البيولوجي للكائنات الدقيقة في البيئات المختلفة واكتشاف أنواع جديدة.', bg: 'bg-gradient-to-br from-emerald-50 to-teal-50', iconBg: 'bg-gradient-to-br from-emerald-500 to-teal-500', iconColor: 'text-white' },
+              { icon: FlaskConical, title: 'علم الفيروسات', description: 'دراسة الفيروسات المسببة للأمراض وتطوير طرق الوقاية والعلاج.', bg: 'bg-gradient-to-br from-violet-50 to-purple-50', iconBg: 'bg-gradient-to-br from-violet-500 to-purple-500', iconColor: 'text-white' },
+              { icon: Microscope, title: 'علم الفطريات الطبية', description: 'البحث في الفطريات المسببة للأمراض وتطوير أساليب التشخيص والعلاج.', bg: 'bg-gradient-to-br from-amber-50 to-yellow-50', iconBg: 'bg-gradient-to-br from-amber-500 to-yellow-500', iconColor: 'text-white' },
+              { icon: Users, title: 'الصحة العامة', description: 'المساهمة في برامج الصحة العامة ومكافحة الأوبئة والأمراض المعدية.', bg: 'bg-gradient-to-br from-teal-50 to-cyan-50', iconBg: 'bg-gradient-to-br from-teal-500 to-cyan-500', iconColor: 'text-white' },
             ].map((area, index) => (
-              <div key={index} className="card-premium p-8 group">
-                <div className={`w-16 h-16 rounded-2xl ${area.iconBg} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500`}>
-                  <area.icon className={`w-8 h-8 ${area.iconColor}`} />
+              <div key={index} className={`card-elevated p-0 group`}>
+                <div className={`${area.bg} p-8 pb-6`}>
+                  <div className={`w-16 h-16 rounded-2xl ${area.iconBg} flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-500`}>
+                    <area.icon className={`w-8 h-8 ${area.iconColor}`} />
+                  </div>
+                  <h3 className="text-xl font-bold text-[#0a1628]">{area.title}</h3>
                 </div>
-                <h3 className="text-xl font-bold text-[#0c1b2a] mb-3">{area.title}</h3>
-                <p className="text-[#5a6275] leading-relaxed text-[0.92rem] font-light">{area.description}</p>
-                <div className="mt-6 flex items-center gap-2 text-[#1b8a7a] text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <span>اقرأ المزيد</span>
-                  <ChevronLeft className="w-4 h-4" />
+                <div className="p-8 pt-5">
+                  <p className="text-[#475569] leading-relaxed text-[0.92rem]">{area.description}</p>
+                  <div className="mt-6 flex items-center gap-2 text-teal-600 text-sm font-bold opacity-0 group-hover:opacity-100 transition-all duration-500 translate-x-4 group-hover:translate-x-0">
+                    <span>اقرأ المزيد</span>
+                    <ChevronLeft className="w-4 h-4" />
+                  </div>
                 </div>
               </div>
             ))}
@@ -130,28 +141,30 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* About Preview - Premium */}
-      <section className="py-28 relative overflow-hidden" style={{ background: 'var(--cream)' }}>
-        {/* Decorative */}
-        <div className="absolute top-0 left-0 w-96 h-96 bg-[#1b8a7a]/5 rounded-full blur-[100px]"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#c8a45e]/5 rounded-full blur-[100px]"></div>
+      {/* ============ ABOUT PREVIEW ============ */}
+      <section className="py-32 relative overflow-hidden bg-mesh-2 bg-pattern-diagonal">
+        {/* Decorative shapes */}
+        <div className="absolute top-20 left-10 w-32 h-32 border-2 border-teal-200/30 rounded-3xl rotate-12 pointer-events-none"></div>
+        <div className="absolute bottom-20 right-10 w-24 h-24 border-2 border-gold/20 rounded-full pointer-events-none"></div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div>
               <div className="section-subtitle">نبذة تعريفية</div>
-              <h2 className="text-4xl md:text-5xl font-bold text-[#0c1b2a] mb-8 section-title leading-tight">
+              <h2 className="text-4xl md:text-5xl font-black text-[#0a1628] mb-8 section-title leading-tight">
                 السيرة الذاتية
               </h2>
-              <p className="text-[#5a6275] leading-[1.9] mb-6 mt-10 text-[0.95rem] font-light">
-                أستاذ مشارك في قسم الأحياء الدقيقة بكلية العلوم، متخصصة في مجال الأحياء الدقيقة الطبية والتشخيصية. حاصلة على درجة الدكتوراه في الأحياء الدقيقة مع تركيز على مقاومة المضادات الحيوية.
-              </p>
-              <p className="text-[#5a6275] leading-[1.9] mb-10 text-[0.95rem] font-light">
-                أسعى من خلال أبحاثي إلى تطوير حلول مبتكرة للتحديات الصحية المعاصرة، مع التركيز على التشخيص المبكر للأمراض المعدية وفهم آليات مقاومة الميكروبات للمضادات الحيوية.
-              </p>
+              <div className="mt-12 space-y-6">
+                <p className="text-[#475569] leading-[2] text-[0.95rem]">
+                  أستاذ مشارك في قسم الأحياء الدقيقة بكلية العلوم، متخصصة في مجال الأحياء الدقيقة الطبية والتشخيصية. حاصلة على درجة الدكتوراه في الأحياء الدقيقة مع تركيز على مقاومة المضادات الحيوية.
+                </p>
+                <p className="text-[#475569] leading-[2] text-[0.95rem]">
+                  أسعى من خلال أبحاثي إلى تطوير حلول مبتكرة للتحديات الصحية المعاصرة، مع التركيز على التشخيص المبكر للأمراض المعدية وفهم آليات مقاومة الميكروبات للمضادات الحيوية.
+                </p>
+              </div>
               
               {/* Stats Row */}
-              <div className="bg-white rounded-2xl shadow-sm border border-[#0000000a] p-2 mb-10 flex">
+              <div className="card-elevated p-2 mt-10 flex">
                 {[
                   { label: 'سنوات الخبرة', value: '+15' },
                   { label: 'طلاب دراسات عليا', value: '+30' },
@@ -159,48 +172,55 @@ export default function HomePage() {
                   { label: 'منشورات علمية', value: '+50' },
                 ].map((stat, index) => (
                   <div key={index} className="stat-counter flex-1">
-                    <div className="text-2xl font-bold text-[#0c1b2a] mb-1">{stat.value}</div>
-                    <div className="text-[#8b93a7] text-xs font-medium">{stat.label}</div>
+                    <div className="text-2xl font-black text-[#0a1628] mb-1">{stat.value}</div>
+                    <div className="text-[#94a3b8] text-xs font-semibold">{stat.label}</div>
                   </div>
                 ))}
               </div>
               
-              <Link href="/about" className="btn-primary text-base">
-                <span>المزيد عن السيرة الذاتية</span>
-                <ArrowLeft className="w-5 h-5" />
-              </Link>
+              <div className="mt-10">
+                <Link href="/about" className="btn-primary text-base">
+                  <span>المزيد عن السيرة الذاتية</span>
+                  <ArrowLeft className="w-5 h-5" />
+                </Link>
+              </div>
             </div>
             
             {/* Qualifications Card */}
             <div className="relative">
-              <div className="absolute -top-6 -right-6 w-full h-full rounded-3xl bg-gradient-to-br from-[#1b8a7a]/10 to-[#c8a45e]/10"></div>
-              <div className="relative bg-gradient-to-br from-[#0c1b2a] via-[#132d46] to-[#1a3a5c] rounded-3xl p-10 text-white overflow-hidden noise-overlay">
-                {/* Decorative */}
-                <div className="absolute top-0 right-0 w-40 h-40 bg-[#c8a45e]/10 rounded-full blur-[60px]"></div>
-                <div className="absolute bottom-0 left-0 w-32 h-32 bg-[#1b8a7a]/10 rounded-full blur-[50px]"></div>
+              {/* Background decoration */}
+              <div className="absolute -top-8 -right-8 w-full h-full rounded-[32px] bg-gradient-to-br from-teal-100/50 to-gold/10 -z-10"></div>
+              <div className="absolute -bottom-4 -left-4 w-full h-full rounded-[32px] border-2 border-teal-200/20 -z-10"></div>
+              
+              <div className="relative bg-mesh-dark rounded-[32px] p-12 text-white overflow-hidden noise-overlay shadow-2xl">
+                {/* Inner glow */}
+                <div className="absolute top-0 right-0 w-48 h-48 bg-gold/10 rounded-full blur-[80px]"></div>
+                <div className="absolute bottom-0 left-0 w-40 h-40 bg-teal-500/10 rounded-full blur-[60px]"></div>
                 
                 <div className="relative">
-                  <div className="flex items-center gap-3 mb-8">
-                    <div className="w-10 h-10 rounded-xl bg-[#c8a45e]/20 flex items-center justify-center">
-                      <GraduationCap className="w-5 h-5 text-[#c8a45e]" />
+                  <div className="flex items-center gap-4 mb-10">
+                    <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-gold/30 to-gold/10 flex items-center justify-center border border-gold/20">
+                      <GraduationCap className="w-6 h-6 text-gold" />
                     </div>
-                    <h3 className="text-xl font-bold">المؤهلات العلمية</h3>
+                    <h3 className="text-2xl font-black">المؤهلات العلمية</h3>
                   </div>
                   
-                  <div className="space-y-8">
+                  <div className="space-y-10">
                     {[
                       { degree: 'دكتوراه في الأحياء الدقيقة', uni: 'جامعة [الاسم]', year: '20XX' },
                       { degree: 'ماجستير في الأحياء الدقيقة الطبية', uni: 'جامعة [الاسم]', year: '20XX' },
                       { degree: 'بكالوريوس علوم أحياء', uni: 'جامعة [الاسم]', year: '20XX' },
                     ].map((edu, index) => (
-                      <div key={index} className="flex gap-5 group">
+                      <div key={index} className="flex gap-6 group">
                         <div className="flex flex-col items-center">
-                          <div className="w-3 h-3 bg-[#c8a45e] rounded-full ring-4 ring-[#c8a45e]/20 group-hover:ring-[#c8a45e]/40 transition-all"></div>
-                          {index < 2 && <div className="w-px h-full bg-gradient-to-b from-[#c8a45e]/30 to-transparent mt-2"></div>}
+                          <div className="relative">
+                            <div className="w-4 h-4 bg-gold rounded-full ring-4 ring-gold/20 group-hover:ring-gold/40 transition-all duration-500"></div>
+                          </div>
+                          {index < 2 && <div className="w-px h-full bg-gradient-to-b from-gold/30 to-transparent mt-3"></div>}
                         </div>
                         <div className="pb-2">
-                          <h4 className="font-bold text-white/95 mb-1">{edu.degree}</h4>
-                          <p className="text-white/40 text-sm font-light">{edu.uni} - {edu.year}</p>
+                          <h4 className="font-bold text-white text-lg mb-1">{edu.degree}</h4>
+                          <p className="text-white/35 text-sm">{edu.uni} - {edu.year}</p>
                         </div>
                       </div>
                     ))}
@@ -212,31 +232,69 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* CTA Section - Premium */}
-      <section className="py-28 relative overflow-hidden noise-overlay" style={{
-        background: 'linear-gradient(160deg, #0c1b2a 0%, #132d46 40%, #1a3a5c 100%)'
-      }}>
+      {/* ============ WHY SECTION ============ */}
+      <section className="py-32 bg-white bg-pattern-grid relative overflow-hidden">
+        <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-teal-200 to-transparent"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent"></div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="text-center mb-20">
+            <div className="section-subtitle justify-center">لماذا نتميز</div>
+            <h2 className="text-4xl md:text-5xl font-black text-[#0a1628] mb-6 section-title mx-auto">
+              ما يميز أبحاثنا
+            </h2>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+            {[
+              { icon: Target, title: 'أبحاث موجهة', desc: 'نركز على أبحاث ذات أثر مباشر على صحة المجتمع والتحديات الصحية المعاصرة.', gradient: 'from-teal-500 to-emerald-500' },
+              { icon: Zap, title: 'تقنيات متقدمة', desc: 'نستخدم أحدث التقنيات الجزيئية والبيولوجية في التشخيص والبحث العلمي.', gradient: 'from-gold to-amber-500' },
+              { icon: Star, title: 'تعاون دولي', desc: 'شراكات بحثية مع مؤسسات أكاديمية وبحثية رائدة على المستوى الدولي.', gradient: 'from-violet-500 to-purple-500' },
+            ].map((item, index) => (
+              <div key={index} className="text-center group">
+                <div className="relative inline-block mb-8">
+                  <div className={`w-24 h-24 rounded-3xl bg-gradient-to-br ${item.gradient} flex items-center justify-center mx-auto shadow-xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-500`}>
+                    <item.icon className="w-12 h-12 text-white" />
+                  </div>
+                  {/* Decorative ring */}
+                  <div className={`absolute -inset-3 rounded-[28px] border-2 border-dashed opacity-20 group-hover:opacity-40 transition-opacity duration-500`} style={{borderColor: index === 0 ? '#0d9488' : index === 1 ? '#d4a853' : '#8b5cf6'}}></div>
+                </div>
+                <h3 className="text-xl font-bold text-[#0a1628] mb-4">{item.title}</h3>
+                <p className="text-[#475569] leading-relaxed max-w-sm mx-auto">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ============ CTA ============ */}
+      <section className="py-32 relative overflow-hidden noise-overlay bg-mesh-dark">
+        {/* Decorative elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#1b8a7a]/8 rounded-full blur-[120px]"></div>
-          <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#c8a45e]/5 rounded-full blur-[100px]"></div>
+          <div className="ring-decoration w-[600px] h-[600px] top-[-200px] left-[-200px] border-white/5 animate-rotate-slow"></div>
+          <div className="ring-decoration w-[400px] h-[400px] bottom-[-100px] right-[-100px] border-gold/10 animate-rotate-slow" style={{animationDirection:'reverse'}}></div>
+          <div className="absolute inset-0 opacity-[0.03]" style={{
+            backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
+            backgroundSize: '60px 60px'
+          }}></div>
         </div>
         
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
-          <div className="inline-flex items-center gap-2 glass rounded-full px-5 py-2 mb-8">
-            <Sparkles className="w-4 h-4 text-[#c8a45e]" />
-            <span className="text-white/60 text-sm">تعاون بحثي</span>
+          <div className="inline-flex items-center gap-3 glass rounded-full px-6 py-3 mb-10">
+            <Sparkles className="w-5 h-5 text-gold" />
+            <span className="text-white/60 text-sm font-semibold tracking-wider">تعاون بحثي</span>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+          <h2 className="text-4xl md:text-6xl font-black text-white mb-8 leading-tight">
             هل لديك استفسار أو ترغب
             <br />
             <span className="text-gradient">في التعاون البحثي؟</span>
           </h2>
-          <p className="text-white/40 text-lg mb-10 max-w-2xl mx-auto font-light leading-relaxed">
+          <p className="text-white/35 text-xl mb-12 max-w-2xl mx-auto font-light leading-relaxed">
             أرحب بالتواصل مع الباحثين والطلاب والمهتمين بمجال الأحياء الدقيقة
           </p>
-          <Link href="/contact" className="btn-gold text-lg px-10 py-4">
+          <Link href="/contact" className="btn-gold text-lg px-12 py-5">
             <span>تواصل الآن</span>
-            <ArrowLeft className="w-5 h-5" />
+            <ArrowLeft className="w-6 h-6" />
           </Link>
         </div>
       </section>
