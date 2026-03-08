@@ -6,7 +6,7 @@ import Link from 'next/link';
 import {
   Microscope, LayoutDashboard, BookOpen, FlaskConical, GraduationCap,
   Award, Newspaper, Image, Users, Settings, Mail, LogOut, Menu, X,
-  ChevronLeft, Lock
+  ChevronLeft, Lock, ExternalLink
 } from 'lucide-react';
 
 const sidebarLinks = [
@@ -57,38 +57,38 @@ export default function AdminDashboardLayout({ children }: { children: React.Rea
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-100">
+      <div className="min-h-screen flex items-center justify-center" style={{ background: '#faf8f5' }}>
         <div className="text-center">
-          <div className="w-12 h-12 border-4 border-[#0f4c75] border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-          <p className="text-gray-500">جاري التحميل...</p>
+          <div className="w-12 h-12 border-3 border-[#0c1b2a] border-t-transparent rounded-full animate-spin mx-auto mb-5"></div>
+          <p className="text-[#8b93a7] text-sm font-light">جاري التحميل...</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-[#f0f2f5]" dir="rtl">
+    <div className="min-h-screen" style={{ background: '#f7f5f2' }} dir="rtl">
       {/* Sidebar */}
-      <aside className={`fixed top-0 right-0 h-full w-64 z-40 transition-transform duration-300 ${
+      <aside className={`fixed top-0 right-0 h-full w-[270px] z-40 transition-transform duration-500 ease-out ${
         sidebarOpen ? 'translate-x-0' : 'translate-x-full lg:translate-x-0'
       }`} style={{
-        background: 'linear-gradient(180deg, #0a3554 0%, #0f4c75 100%)'
+        background: 'linear-gradient(180deg, #0c1b2a 0%, #132d46 50%, #0c1b2a 100%)'
       }}>
         {/* Logo */}
-        <div className="p-6 border-b border-white/10">
+        <div className="p-6 border-b border-white/5">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center">
-              <Microscope className="w-6 h-6 text-[#bbe1fa]" />
+            <div className="w-10 h-10 bg-gradient-to-br from-[#1b8a7a]/20 to-[#c8a45e]/20 rounded-xl flex items-center justify-center border border-white/5">
+              <Microscope className="w-5 h-5 text-[#c8a45e]" />
             </div>
             <div>
               <h2 className="text-white font-bold text-sm">لوحة التحكم</h2>
-              <p className="text-white/50 text-xs">إدارة المحتوى</p>
+              <p className="text-white/30 text-[0.65rem] font-medium tracking-[0.1em] uppercase">Content Management</p>
             </div>
           </div>
         </div>
 
         {/* Navigation */}
-        <nav className="p-4 space-y-1 overflow-y-auto" style={{ maxHeight: 'calc(100vh - 180px)' }}>
+        <nav className="p-4 space-y-1 overflow-y-auto" style={{ maxHeight: 'calc(100vh - 200px)' }}>
           {sidebarLinks.map((link) => {
             const isActive = pathname === link.href;
             return (
@@ -96,36 +96,36 @@ export default function AdminDashboardLayout({ children }: { children: React.Rea
                 key={link.href}
                 href={link.href}
                 onClick={() => setSidebarOpen(false)}
-                className={`flex items-center gap-3 px-4 py-3 rounded-lg text-sm transition-all ${
+                className={`flex items-center gap-3 px-4 py-3 rounded-xl text-[0.82rem] transition-all duration-300 ${
                   isActive
-                    ? 'bg-white/15 text-white font-medium'
-                    : 'text-white/70 hover:bg-white/10 hover:text-white'
+                    ? 'bg-white/10 text-white font-semibold border border-white/5'
+                    : 'text-white/40 hover:bg-white/5 hover:text-white/70'
                 }`}
               >
-                <link.icon className="w-5 h-5" />
+                <link.icon className={`w-[18px] h-[18px] ${isActive ? 'text-[#c8a45e]' : ''}`} />
                 <span>{link.label}</span>
-                {isActive && <ChevronLeft className="w-4 h-4 mr-auto" />}
+                {isActive && <ChevronLeft className="w-3.5 h-3.5 mr-auto text-[#c8a45e]" />}
               </Link>
             );
           })}
         </nav>
 
         {/* User Info */}
-        <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-white/10">
-          <div className="flex items-center gap-3 mb-3">
-            <div className="w-8 h-8 bg-[#c9a84c] rounded-full flex items-center justify-center">
-              <span className="text-white text-sm font-bold">{user?.name?.charAt(0) || 'م'}</span>
+        <div className="absolute bottom-0 left-0 right-0 p-5 border-t border-white/5">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-9 h-9 bg-gradient-to-br from-[#c8a45e] to-[#dfc07f] rounded-xl flex items-center justify-center">
+              <span className="text-[#0c1b2a] text-sm font-bold">{user?.name?.charAt(0) || 'م'}</span>
             </div>
             <div>
-              <p className="text-white text-sm font-medium">{user?.name || 'مدير'}</p>
-              <p className="text-white/50 text-xs">{user?.role || 'admin'}</p>
+              <p className="text-white text-sm font-semibold">{user?.name || 'مدير'}</p>
+              <p className="text-white/25 text-[0.65rem] font-light">{user?.role || 'admin'}</p>
             </div>
           </div>
           <button
             onClick={handleLogout}
-            className="flex items-center gap-2 text-white/60 hover:text-red-400 text-sm transition-colors w-full px-2"
+            className="flex items-center gap-2 text-white/30 hover:text-red-400 text-xs transition-colors duration-300 w-full px-1 font-light"
           >
-            <LogOut className="w-4 h-4" />
+            <LogOut className="w-3.5 h-3.5" />
             <span>تسجيل الخروج</span>
           </button>
         </div>
@@ -134,24 +134,25 @@ export default function AdminDashboardLayout({ children }: { children: React.Rea
       {/* Overlay for mobile */}
       {sidebarOpen && (
         <div
-          className="fixed inset-0 bg-black/50 z-30 lg:hidden"
+          className="fixed inset-0 bg-black/40 backdrop-blur-sm z-30 lg:hidden"
           onClick={() => setSidebarOpen(false)}
         />
       )}
 
       {/* Main Content */}
-      <div className="lg:mr-64">
+      <div className="lg:mr-[270px]">
         {/* Top Bar */}
-        <header className="bg-white shadow-sm sticky top-0 z-20">
+        <header className="bg-white/80 backdrop-blur-xl sticky top-0 z-20 border-b border-[#0000000a]">
           <div className="flex items-center justify-between px-6 py-4">
             <button
               onClick={() => setSidebarOpen(!sidebarOpen)}
-              className="lg:hidden p-2 text-gray-600 hover:bg-gray-100 rounded-lg"
+              className="lg:hidden p-2.5 text-[#0c1b2a] hover:bg-[#0c1b2a]/5 rounded-xl transition-colors"
             >
-              {sidebarOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {sidebarOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
             <div className="flex items-center gap-4">
-              <Link href="/" target="_blank" className="text-sm text-[#3282b8] hover:underline">
+              <Link href="/" target="_blank" className="text-sm text-[#1b8a7a] hover:text-[#0c1b2a] transition-colors font-medium flex items-center gap-1.5">
+                <ExternalLink className="w-3.5 h-3.5" />
                 عرض الموقع
               </Link>
             </div>
@@ -159,7 +160,7 @@ export default function AdminDashboardLayout({ children }: { children: React.Rea
         </header>
 
         {/* Page Content */}
-        <main className="p-6">
+        <main className="p-6 lg:p-8">
           {children}
         </main>
       </div>
